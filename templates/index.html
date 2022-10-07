@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ProjectStack App</title>
+  <!--meta tags-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body{
+      text-align: center;
+    }
+    .output{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+
+  </style>
+</head>
+<body >
+    <h1>Random Emoji</h1>
+    <h1>{{k|safe}}</h1>
+    <button><a href="home" >Generate</a></button>  
+     <h1>search emoji using name</h1>
+     <form action="/searchs" method="POST">
+      {% csrf_token %}
+      <input type="text" name="emojis" id="emojis">
+      <button type="submit">submit</button>
+    </form>
+    <div class="output">
+     {% for i in output %}
+     {% for j in i %}
+     <h1>{{j|safe}}</h1>
+     {% endfor %}
+     {% endfor %}
+    </div>
+    
+</body>
+</html>
